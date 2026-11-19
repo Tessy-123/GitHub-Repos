@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protection of Sensitive Information | Database Security Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .doc-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .doc-section h2 {
+            margin-bottom: 1rem;
+            color: #818cf8;
+            font-size: 1.3rem;
+        }
+        .doc-section p, .doc-section li {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        .doc-section ul {
+            padding-left: 1.5rem;
+        }
+        .sensitive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.88rem;
+        }
+        .sensitive-table th, .sensitive-table td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        .sensitive-table th {
+            background: #0f172a;
+            color: #818cf8;
+        }
+        .sensitive-table td {
+            background: #090d16;
+        }
+        .masked {
+            font-family: monospace;
+            color: #fca5a5;
+            letter-spacing: 1px;
+        }
+        .encrypted-hash {
+            font-family: monospace;
+            color: #38bdf8;
+            font-size: 0.75rem;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Project #9: Database Security</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Authentication</a></li>
+                <li><a href="dashboard.html">Secure Dashboard</a></li>
+                <li><a href="docs.html" class="active">Sensitive Data Protection</a></li>
+                <li><a href="#" onclick="logoutUser(event)" style="color: var(--danger); font-weight: 600;">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Protection of Sensitive Information Module</h1>
+        <p class="subtitle">Demonstrating Field-Level Data Encryption, Hashing (SHA-256), and Dynamic Data Masking (PII Protection).</p>
+
+        <!-- Project Identification & Verification -->
+        <div class="doc-section">
+            <h2>Project Metadata & Verification</h2>
+            <ul>
+                <li><strong>Candidate Name:</strong> Chinsinsi Msanyama</li>
+                <li><strong>Registration Number:</strong> 23311351017</li>
+                <li><strong>Assigned Project:</strong> No. 9 — Database Security Implementation</li>
+                <li><strong>Institution:</strong> DMI-St. John the Baptist University</li>
+                <li><strong>GitHub Repository:</strong> <a href="https://github.com/Tessy-123/database-security-implementation" target="_blank" style="color: #818cf8;">https://github.com/Tessy-123/database-security-implementation</a></li>
+                <li><strong>Lecturer Review Collaborator:</strong> <code>stanslausphillimon@gmail.com</code></li>
+            </ul>
+        </div>
+
+        <!-- Interactive Sensitive Data Protection Showcase -->
+        <div class="doc-section">
+            <h2>Institutional Data Vault (Encrypted & Masked View)</h2>
+            <p>In accordance with database security standards, sensitive fields like Passwords, National IDs, and Financial Records are never stored or exposed in plain text.</p>
+
+            <table class="sensitive-table">
+                <thead>
+                    <tr>
+                        <th>User / Record ID</th>
+                        <th>Role</th>
+                        <th>National ID (Masked PII)</th>
+                        <th>Password Hash (SHA-256)</th>
+                        <th>Data Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chinsinsi Msanyama (23311351017)</td>
+                        <td>Administrator</td>
+                        <td class="masked">••••-••••-1017</td>
+                        <td class="encrypted-hash">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                        <td><span style="color: var(--success);">Encrypted & Masked</span></td>
+                    </tr>
+                    <tr>
+                        <td>Albert Mkwanda (23311351001)</td>
+                        <td>Student</td>
+                        <td class="masked">••••-••••-1001</td>
+                        <td class="encrypted-hash">8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92</td>
+                        <td><span style="color: var(--success);">Encrypted & Masked</span></td>
+                    </tr>
+                    <tr>
+                        <td>Moses Makunganya (23311351012)</td>
+                        <td>Developer</td>
+                        <td class="masked">••••-••••-1012</td>
+                        <td class="encrypted-hash">4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a</td>
+                        <td><span style="color: var(--success);">Encrypted & Masked</span></td>
+                    </tr>
+                    <tr>
+                        <td>Yamikani Chanza (24313351002)</td>
+                        <td>Collaborator</td>
+                        <td class="masked">••••-••••-1002</td>
+                        <td class="encrypted-hash">ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d</td>
+                        <td><span style="color: var(--success);">Encrypted & Masked</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="doc-section">
+            <h2>Security Mechanisms Implemented</h2>
+            <ul>
+                <li><strong>One-Way Hashing (SHA-256):</strong> Passwords are transformed into irreversible cryptographic digests via Web Crypto API digest algorithm prior to storage.</li>
+                <li><strong>Dynamic Data Masking:</strong> Sensitive identifiers (e.g., National ID numbers) hide all but the trailing four characters to prevent unauthorized eavesdropping.</li>
+                <li><strong>Privilege-Gated Decryption:</strong> Full unmasked raw data access is denied across public endpoints and accessible strictly under explicit DB administrator key escalation.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chinsinsi Msanyama (Reg No: 23311351017) | DMI-St. John the Baptist University</p>
+    </footer>
+    <script>
+        function logoutUser(e) {
+            e.preventDefault();
+            sessionStorage.removeItem('secureSession');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

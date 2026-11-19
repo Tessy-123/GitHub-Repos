@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology | Mobile Money Anomaly Detection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <span>Project 9</span>
+      <span class="badge">Unsupervised ML</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="methodology.html" class="active">Methodology</a></li>
+      <li><a href="insights.html">Insights & Results</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+      <span class="meta-tag">Architecture Overview</span>
+      <h1>Machine Learning Pipeline & Methodology</h1>
+      <p>A breakdown of the unsupervised data processing workflow, normalization standards, and algorithm mechanics.</p>
+    </section>
+
+    <div class="grid">
+      <div class="card">
+        <h3>1. Data Preprocessing & Feature Engineering</h3>
+        <p>Transaction types (<code>TRANSFER</code>, <code>CASH_OUT</code>, <code>PAYMENT</code>, <code>DEPOSIT</code>) were converted using One-Hot Encoding. Features were scaled using <code>StandardScaler</code> to ensure features like transaction amounts do not overshadow lower-range balance features.</p>
+      </div>
+      <div class="card">
+        <h3>2. Isolation Forest Model</h3>
+        <p>Isolates anomalous data points by constructing random decision trees. Anomalies require fewer partitions to isolate than normal data due to their unique positions in feature space.</p>
+      </div>
+      <div class="card">
+        <h3>3. K-Means Distance Scoring</h3>
+        <p>Partitions data into optimal clusters ($k=4$). Computes Euclidean distance from each sample point to its assigned centroid; points exceeding the 95th percentile distance are flagged as anomalies.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 2rem;">
+      <h3>Model Configuration Specifications</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Configuration / Parameter</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Scaler</strong></td>
+              <td><code>StandardScaler()</code></td>
+              <td>Standardizes features by removing mean and scaling to unit variance.</td>
+            </tr>
+            <tr>
+              <td><strong>Isolation Forest</strong></td>
+              <td><code>contamination=0.05, n_estimators=100</code></td>
+              <td>Sets expected proportion of outliers in the dataset to 5%.</td>
+            </tr>
+            <tr>
+              <td><strong>K-Means Clustering</strong></td>
+              <td><code>n_clusters=4, n_init=10</code></td>
+              <td>Groups typical transaction behavior into 4 baseline operational profiles.</td>
+            </tr>
+            <tr>
+              <td><strong>Dimensionality Reduction</strong></td>
+              <td><code>PCA(n_components=2)</code></td>
+              <td>Projects multi-dimensional feature space onto 2D plane for visual analysis.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Project #9 | Mobile Money Anomaly Detection | <a href="https://github.com/Tessy-123/unusual-mobile-money-transactions" target="_blank">GitHub Repository</a></p>
+  </footer>
+</body>
+</html>

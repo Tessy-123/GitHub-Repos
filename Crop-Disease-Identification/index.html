@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare AI - Home</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>🌱 CropCare AI</h2>
+                <p>Smart Agriculture Companion</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">🏠 Home</a></li>
+                <li><a href="identify.html">📷 Crop Disease</a></li>
+                <li><a href="results.html">📊 Analysis Results</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1>AI-Based Crop Disease Identification</h1>
+                <span class="badge">Project #9</span>
+            </header>
+
+            <!-- Project Purpose Card -->
+            <section class="card intro-card" style="margin-bottom: 25px;">
+                <h2>Project Purpose</h2>
+                <p>Developed as part of the academic requirements for Project #9, this platform provides an image classification prototype designed to identify selected crop diseases from leaf images. The system is built to support Malawi's agricultural sector by empowering farmers, extension workers, and agricultural officers to detect plant health issues early and apply timely localized treatments.</p>
+            </section>
+
+            <!-- AI Identification Process Card -->
+            <section class="card intro-card" style="margin-bottom: 25px;">
+                <h2>How the AI Identification Process Works</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div style="background: #f7fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #48bb78;">
+                        <h4 style="color: #2d3748; margin-bottom: 5px;">1. Select & Upload</h4>
+                        <p style="font-size: 0.9rem; color: #4a5568;">The user selects the target crop and uploads a clear leaf image from the field for diagnosis.</p>
+                    </div>
+                    <div style="background: #f7fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #3182ce;">
+                        <h4 style="color: #2d3748; margin-bottom: 5px;">2. Image Classification</h4>
+                        <p style="font-size: 0.9rem; color: #4a5568;">The AI model studies leaf color, spot patterns, and disease symptoms against a labeled dataset.</p>
+                    </div>
+                    <div style="background: #f7fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #ed8936;">
+                        <h4 style="color: #2d3748; margin-bottom: 5px;">3. Results & Treatment</h4>
+                        <p style="font-size: 0.9rem; color: #4a5568;">The system provides the likely disease, confidence level, severity estimate, and recommended response.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why this matters -->
+            <section class="card intro-card" style="margin-bottom: 25px;">
+                <h2>Why This Matters for Agriculture</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div style="background: #ecfdf5; padding: 18px; border-radius: 10px; border: 1px solid #bbf7d0;">
+                        <h4 style="color: #166534; margin-bottom: 8px;">Early Detection</h4>
+                        <p style="font-size: 0.92rem; color: #4a5568;">Spotting disease early helps reduce crop loss and prevents the spread of infection across nearby plants.</p>
+                    </div>
+                    <div style="background: #eff6ff; padding: 18px; border-radius: 10px; border: 1px solid #bfdbfe;">
+                        <h4 style="color: #1d4ed8; margin-bottom: 8px;">Better Farm Decisions</h4>
+                        <p style="font-size: 0.92rem; color: #4a5568;">Farmers and agricultural officers can act faster using visible symptoms, disease risk alerts, and guidance.</p>
+                    </div>
+                    <div style="background: #fff7ed; padding: 18px; border-radius: 10px; border: 1px solid #fed7aa;">
+                        <h4 style="color: #c2410c; margin-bottom: 8px;">Cost Savings</h4>
+                        <p style="font-size: 0.92rem; color: #4a5568;">Timely action reduces unnecessary spraying, protects yields, and helps farmers manage input costs wisely.</p>
+                    </div>
+                    <div style="background: #fdf2f8; padding: 18px; border-radius: 10px; border: 1px solid #fbcfe8;">
+                        <h4 style="color: #9d174d; margin-bottom: 8px;">Food Security</h4>
+                        <p style="font-size: 0.92rem; color: #4a5568;">Healthy crops support stable production, income generation, and food availability in rural communities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practical features -->
+            <section class="card intro-card" style="margin-bottom: 25px;">
+                <h2>What the System Supports</h2>
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; align-items: start; margin-top: 15px;">
+                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 12px;">
+                        <li style="padding: 12px 14px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #22c55e; color: #2d3748;">✔️ Crop disease recognition from uploaded leaf images</li>
+                        <li style="padding: 12px 14px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #3b82f6; color: #2d3748;">✔️ Support for major crops such as maize, tobacco, tomato, tea, and cassava</li>
+                        <li style="padding: 12px 14px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #f59e0b; color: #2d3748;">✔️ Simple interface for farmers, extension workers, and agricultural officers</li>
+                        <li style="padding: 12px 14px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #ef4444; color: #2d3748;">✔️ Fast decision support for field diagnosis and treatment planning</li>
+                    </ul>
+
+                    <div style="background: linear-gradient(135deg, #e6fffa 0%, #f0fdf4 100%); padding: 20px; border-radius: 12px; border: 1px solid #a7f3d0;">
+                        <h4 style="color: #065f46; margin-bottom: 10px;">Targeted Crops</h4>
+                        <p style="font-size: 0.92rem; color: #374151; line-height: 1.8; margin: 0;">
+                            Maize<br>
+                            Tobacco<br>
+                            Tomato<br>
+                            Tea<br>
+                            Cassava
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation & GitHub Link -->
+            <section class="card intro-card">
+                <h2>Project Repository & Access</h2>
+                <p style="margin-bottom: 15px;">Access the complete source code, documentation, and datasets hosted on GitHub as required by the submission guidelines.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Tessy-123/Crop-Disease-Identification" target="_blank" class="btn-primary">📦 GitHub Repository</a>
+                    <a href="identify.html" class="btn-secondary">Start Disease Identification &rarr;</a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Results | Mobile Money Anomaly Detection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <span>Project 9</span>
+      <span class="badge">Unsupervised ML</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="insights.html" class="active">Insights & Results</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+      <span class="meta-tag">Analytical Results</span>
+      <h1>Model Findings & Anomaly Visualizations</h1>
+      <p>Comparative visual evaluation and flagged sample outputs from the unsupervised models.</p>
+    </section>
+
+    <div class="card">
+      <h3>Principal Component Analysis (PCA) Anomaly Map</h3>
+      <p>The high-dimensional transaction features are projected onto 2 principal components. Red and orange data points highlight transactions flagged as anomalous by Isolation Forest and K-Means models due to extreme amounts or illegal balance changes.</p>
+      
+      <div class="img-container">
+        <img src="anomaly_detection_results.png" alt="Anomaly Detection Results Graph" class="plot-img">
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 2rem;">
+      <h3>Algorithmic Evaluation & Comparison</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Evaluation Criteria</th>
+              <th>Isolation Forest</th>
+              <th>K-Means Distance Clustering</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Core Mechanism</strong></td>
+              <td>Tree-based random feature splitting</td>
+              <td>Euclidean distance to cluster centroid</td>
+            </tr>
+            <tr>
+              <td><strong>Anomalies Detected</strong></td>
+              <td>250 (5.0%)</td>
+              <td>250 (5.0%)</td>
+            </tr>
+            <tr>
+              <td><strong>Primary Strength</strong></td>
+              <td>Excels in high-dimensional space without distance metrics</td>
+              <td>Provides clear cluster baselines for user profiling</td>
+            </tr>
+            <tr>
+              <td><strong>Computational Complexity</strong></td>
+              <td>$\mathcal{O}(n \log n)$ — Highly scalable</td>
+              <td>$\mathcal{O}(n \cdot k \cdot i)$ — Sensitive to cluster count $k$</td>
+            </tr>
+            <tr>
+              <td><strong>Recommended Use Case</strong></td>
+              <td>Real-time streaming fraud isolation</td>
+              <td>Batch behavioral segmentation & profiling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 2rem;">
+      <h3>Sample Output: Flagged Unusual Transactions</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount (MWK)</th>
+              <th>Old Balance (MWK)</th>
+              <th>New Balance (MWK)</th>
+              <th>IsoForest Flag</th>
+              <th>K-Means Flag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>TRANSFER</code></td>
+              <td>MWK 42,150.00</td>
+              <td>MWK 1,200.00</td>
+              <td>MWK 18,400.00</td>
+              <td><span class="tag tag-danger">ANOMALY</span></td>
+              <td><span class="tag tag-danger">ANOMALY</span></td>
+            </tr>
+            <tr>
+              <td><code>CASH_OUT</code></td>
+              <td>MWK 120.50</td>
+              <td>MWK 5,400.00</td>
+              <td>MWK 5,279.50</td>
+              <td><span class="tag tag-success">NORMAL</span></td>
+              <td><span class="tag tag-success">NORMAL</span></td>
+            </tr>
+            <tr>
+              <td><code>TRANSFER</code></td>
+              <td>MWK 38,900.00</td>
+              <td>MWK 450.00</td>
+              <td>MWK 12,300.00</td>
+              <td><span class="tag tag-danger">ANOMALY</span></td>
+              <td><span class="tag tag-danger">ANOMALY</span></td>
+            </tr>
+            <tr>
+              <td><code>PAYMENT</code></td>
+              <td>MWK 45.00</td>
+              <td>MWK 1,100.00</td>
+              <td>MWK 1,055.00</td>
+              <td><span class="tag tag-success">NORMAL</span></td>
+              <td><span class="tag tag-success">NORMAL</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top: 2rem;">
+      <div class="card">
+        <h3>Processed Dataset</h3>
+        <p>Download the dataset containing all predictions, anomaly scores, and PCA coordinates.</p>
+        <br>
+        <a href="mobile_money_anomalies_output.csv" class="btn" download>Download CSV Output</a>
+      </div>
+      <div class="card">
+        <h3>GitHub Source Code</h3>
+        <p>Access model files (<code>.pkl</code>), scripts, and source materials directly on GitHub.</p>
+        <br>
+        <a href="https://github.com/Tessy-123/unusual-mobile-money-transactions" target="_blank" class="btn btn-secondary">Open Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Project #9 | Mobile Money Anomaly Detection | <a href="https://github.com/Tessy-123/unusual-mobile-money-transactions" target="_blank">GitHub Repository</a></p>
+  </footer>
+</body>
+</html>

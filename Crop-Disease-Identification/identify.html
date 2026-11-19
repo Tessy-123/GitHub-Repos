@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare AI - Identify Disease</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>🌱 CropCare AI</h2>
+                <p>Smart Agriculture Companion</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="identify.html" class="active">📷 Crop Disease</a></li>
+                <li><a href="results.html">📊 Analysis Results</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1>AI Crop Disease Detection</h1>
+                <span class="badge">Project #9</span>
+            </header>
+
+            <section class="card">
+                <p style="margin-bottom: 20px; color: #4a5568;">Upload a photo of your crop leaf for instant AI-based disease identification with localized recommendations[cite: 3].</p>
+                
+                <form id="uploadForm" action="results.html" method="GET">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="cropSelect" style="display: block; margin-bottom: 8px; font-weight: 600;">Select Crop:</label>
+                        <select id="cropSelect" name="crop" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e0;">
+                            <option value="maize">Maize (Chimanga)</option>
+                            <option value="tobacco">Tobacco</option>
+                            <option value="tomato">Tomato</option>
+                            <option value="tea">Tea</option>
+                            <option value="cassava">Cassava (MaTchombe)</option>
+                        </select>
+                    </div>
+
+                    <div class="upload-box" style="border: 2px dashed #cbd5e0; padding: 40px; text-align: center; border-radius: 8px; margin-bottom: 20px; background: #fafafa;">
+                        <input type="file" id="leafImage" accept="image/*" style="display: none;" onchange="previewFile()">
+                        <label for="leafImage" style="cursor: pointer; color: #3182ce; font-weight: 600;">Choose Leaf Image</label>
+                        <p style="color: #718096; margin-top: 5px; font-size: 0.9rem;">Supports JPG, PNG formats</p>
+                        <div id="imagePreview" style="margin-top: 15px;"></div>
+                    </div>
+
+                    <button type="submit" class="btn-secondary" style="width: 100%; border: none; cursor: pointer; padding: 12px; font-size: 1rem;">Analyze with AI</button>
+                </form>
+
+                <div style="margin-top: 20px;">
+                    <a href="https://github.com/Tessy-123/Crop-Disease-Identification" target="_blank" class="btn-primary" style="display: inline-block; text-align: center; width: 100%;">📦 GitHub Repository</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function previewFile() {
+            const preview = document.getElementById('imagePreview');
+            const file = document.getElementById('leafImage').files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.innerHTML = `<img src="${reader.result}" alt="Uploaded Leaf" style="max-height: 150px; border-radius: 6px;">`;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

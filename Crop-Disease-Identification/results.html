@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare AI - Analysis Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>🌱 CropCare AI</h2>
+                <p>Smart Agriculture Companion</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="identify.html">📷 Crop Disease</a></li>
+                <li><a href="results.html" class="active">📊 Analysis Results</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1>AI Analysis Results</h1>
+                <span class="badge">Project #9</span>
+            </header>
+
+            <div class="results-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- Left: Uploaded Image Preview Box -->
+                <section class="card">
+                    <h3 style="margin-bottom: 15px; color: #2d3748;">Analyzed Leaf Sample</h3>
+                    <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; height: 250px; display: flex; align-items: center; justify-content: center;">
+                        <!-- Placeholder reflecting typical sample output -->
+                        <p style="color: #718096; font-style: italic;">[ Sample Leaf Image Classified ]</p>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a href="identify.html" class="btn-primary" style="display: inline-block; text-align: center; width: 100%;">Upload Another Leaf</a>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a href="https://github.com/Tessy-123/Crop-Disease-Identification" target="_blank" class="btn-primary" style="display: inline-block; text-align: center; width: 100%;">📦 GitHub Repository</a>
+                    </div>
+                </section>
+
+                <!-- Right: Prediction Details -->
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h3 style="color: #e53e3e;">⚠️ Tomato Early Blight</h3>
+                        <span style="background: #fffaf0; color: #dd6b20; border: 1px solid #feebc8; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">Moderate Severity</span>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-size: 0.9rem; color: #4a5568; margin-bottom: 5px;">AI Analysis Complete</p>
+                        <div style="display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 5px;">
+                            <span>Confidence Score</span>
+                            <span style="color: #38a169;">94.2%</span>
+                        </div>
+                        <div style="background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background: #48bb78; width: 94.2%; height: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="font-size: 1rem; color: #2d3748; margin-bottom: 8px;">Description</h4>
+                        <p style="font-size: 0.9rem; color: #4a5568; line-height: 1.5;">Early blight is a fungal disease caused by <em>Alternaria solani</em>. It appears as dark brown spots with concentric rings on older leaves, eventually causing yellowing and defoliation.</p>
+                    </div>
+
+                    <div>
+                        <h4 style="font-size: 1rem; color: #2d3748; margin-bottom: 8px;">Recommended Treatment</h4>
+                        <ul style="font-size: 0.9rem; color: #4a5568; padding-left: 20px; line-height: 1.6;">
+                            <li>Apply copper-based fungicide (Copper oxychloride 50% WP @ 2g/L).</li>
+                            <li>Remove affected leaves and destroy them to prevent spore spread.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
